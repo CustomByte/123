@@ -22,7 +22,7 @@ local TweenTable = {
 }
 local CreateTween = function(name, speed, style, direction, loop, reverse, delay)
     name = name
-    speed = speed or 0.17
+    speed = speed or 0.5
     style = style or Enum.EasingStyle.Sine
     direction = direction or Enum.EasingDirection.InOut
     loop = loop or 0
@@ -775,7 +775,7 @@ function library:Introduction()
     xsx.BackgroundTransparency = 1.000
     xsx.Size = UDim2.new(0, 80, 0, 21)
     xsx.Font = Enum.Font.Code
-    xsx.Text = "retardhook.lua"
+    xsx.Text = "estohook.lua"
     xsx.TextColor3 = Color3.fromRGB(124, 124, 124)
     xsx.TextSize = 10.000
     xsx.TextTransparency = 1
@@ -787,7 +787,7 @@ function library:Introduction()
     text.Position = UDim2.new(0.912751675, 0, 0, 0)
     text.Size = UDim2.new(0, 26, 0, 21)
     text.Font = Enum.Font.Code
-    text.Text = "retardhook.xyz"
+    text.Text = "estohook.xyz"
     text.TextColor3 = Color3.fromRGB(124, 124, 124)
     text.TextSize = 10.000
     text.TextTransparency = 1
