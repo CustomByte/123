@@ -243,6 +243,30 @@ function library:Watermark(text)
     edgeCorner.Name = "edgeCorner"
     edgeCorner.Parent = edge
 
+    local glow = Instance.new("Frame")
+glow.Name = "glow"
+glow.Parent = edge
+glow.AnchorPoint = Vector2.new(0.5, 0.5)
+glow.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- White for a neutral glow
+glow.BackgroundTransparency = 1 -- Transparent since glow will be applied via BlurEffect
+glow.Position = UDim2.new(0.5, 0, 0.5, 0)
+glow.Size = UDim2.new(1, 40, 1, 40) -- Slightly larger than parent to extend the glow
+glow.ZIndex = -1 -- Renders behind everything in `edge`
+
+-- Apply UIGradient for a smooth transition
+local glowGradient = Instance.new("UIGradient")
+glowGradient.Color = ColorSequence.new{
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)), 
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0))
+}
+glowGradient.Rotation = 90
+glowGradient.Parent = glow
+
+-- Apply UI Blur Effect
+local blur = Instance.new("UIBlurEffect")
+blur.Size = 15 -- Adjust the blur intensity
+blur.Parent = glow
+
     background.Name = "background"
     background.Parent = edge
     background.AnchorPoint = Vector2.new(0.5, 0.5)
