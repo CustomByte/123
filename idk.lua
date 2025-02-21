@@ -802,6 +802,42 @@ text.RichText = true
     pageLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
     pageLayout.SortOrder = Enum.SortOrder.LayoutOrder
     pageLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+
+    CreateTween("xsxRotation", 0)
+    local MinusAmount = -16
+    coroutine.wrap(function()
+        while wait() do
+            MinusAmount = MinusAmount + 0.4
+            TweenService:Create(xsxLogo, TweenTable["xsxRotation"], {Rotation = xsxLogo.Rotation - MinusAmount}):Play()
+        end
+    end)()
+
+    TweenService:Create(edge, TweenTable["introduction"], {BackgroundTransparency = 0}):Play()
+    TweenService:Create(background, TweenTable["introduction"], {BackgroundTransparency = 0}):Play()
+    wait(.2)
+    TweenService:Create(bar, TweenTable["introduction"], {Size = UDim2.new(0, 298, 0, 1)}):Play()
+    wait(.2)
+    TweenService:Create(xsx, TweenTable["introduction"], {TextTransparency = 0}):Play()
+    TweenService:Create(text, TweenTable["introduction"], {TextTransparency = 0}):Play()
+    wait(.3)
+    TweenService:Create(xsxLogo, TweenTable["introduction"], {ImageTransparency = 0}):Play()
+    wait(2)
+    TweenService:Create(xsxLogo, TweenTable["introduction"], {ImageTransparency = 1}):Play()
+    wait(.2)
+    TweenService:Create(hashLogo, TweenTable["introduction"], {ImageTransparency = 0}):Play()
+    wait(2)
+    TweenService:Create(hashLogo, TweenTable["introduction"], {ImageTransparency = 1}):Play()
+    wait(.1)
+    TweenService:Create(text, TweenTable["introduction"], {TextTransparency = 1}):Play()
+    wait(.1)
+    TweenService:Create(xsx, TweenTable["introduction"], {TextTransparency = 1}):Play()
+    wait(.1)
+    TweenService:Create(bar, TweenTable["introduction"], {Size = UDim2.new(0, 0, 0, 1)}):Play()
+    wait(.1)
+    TweenService:Create(background, TweenTable["introduction"], {BackgroundTransparency = 1}):Play()
+    TweenService:Create(edge, TweenTable["introduction"], {BackgroundTransparency = 1}):Play()
+    wait(.2)
+    introduction:Destroy()
 end
 
 function library:Init(key)
