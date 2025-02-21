@@ -262,11 +262,6 @@ glowGradient.Color = ColorSequence.new{
 glowGradient.Rotation = 90
 glowGradient.Parent = glow
 
--- Apply UI Blur Effect
-local blur = Instance.new("UIBlurEffect")
-blur.Size = 15 -- Adjust the blur intensity
-blur.Parent = glow
-
     background.Name = "background"
     background.Parent = edge
     background.AnchorPoint = Vector2.new(0.5, 0.5)
