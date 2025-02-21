@@ -795,7 +795,7 @@ text.BackgroundTransparency = 1.000
 text.Size = UDim2.new(0, 26, 0, 21)  -- Keep the original size
 
 -- Center the text horizontally
-text.Position = UDim2.new(0.5, -13, 0.5, 0.5) -- 0.5 means center, -13 offsets half of the width
+text.Position = UDim2.new(0.5, 0.5, 0.5, 0.5) -- 0.5 means center, -13 offsets half of the width
 text.AnchorPoint = Vector2.new(0.5, 0) -- Ensures the position is set from the center
 
 text.Font = Enum.Font.Code
