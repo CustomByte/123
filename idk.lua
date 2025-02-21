@@ -775,65 +775,33 @@ function library:Introduction()
     xsx.BackgroundTransparency = 1.000
     xsx.Size = UDim2.new(0, 80, 0, 21)
     xsx.Font = Enum.Font.Code
-    xsx.Text = "estohook.lua"
+    xsx.Text = "fatal.lua"
     xsx.TextColor3 = Color3.fromRGB(124, 124, 124)
     xsx.TextSize = 10.000
     xsx.TextTransparency = 1
     
     text.Name = "text"
-    text.Parent = background
-    text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    text.BackgroundTransparency = 1.000
-    text.Position = UDim2.new(0.912751675, 0, 0, 0)
-    text.Size = UDim2.new(0, 26, 0, 21)
-    text.Font = Enum.Font.Code
-    text.Text = "estohook.xyz"
-    text.TextColor3 = Color3.fromRGB(124, 124, 124)
-    text.TextSize = 10.000
-    text.TextTransparency = 1
-    text.RichText = true
+text.Parent = background
+text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+text.BackgroundTransparency = 1.000
+text.Size = UDim2.new(0, 26, 0, 21)  -- Keep the original size
+
+-- Center the text horizontally
+text.Position = UDim2.new(0.5, -13, 0, 0) -- 0.5 means center, -13 offsets half of the width
+text.AnchorPoint = Vector2.new(0.5, 0) -- Ensures the position is set from the center
+
+text.Font = Enum.Font.Code
+text.Text = "fatal.gg"
+text.TextColor3 = Color3.fromRGB(124, 124, 124)
+text.TextSize = 10.000
+text.TextTransparency = 1
+text.RichText = true
     
     pageLayout.Name = "pageLayout"
     pageLayout.Parent = introduction
     pageLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
     pageLayout.SortOrder = Enum.SortOrder.LayoutOrder
     pageLayout.VerticalAlignment = Enum.VerticalAlignment.Center
-
-    CreateTween("xsxRotation", 0)
-    local MinusAmount = -16
-    coroutine.wrap(function()
-        while wait() do
-            MinusAmount = MinusAmount + 0.4
-            TweenService:Create(xsxLogo, TweenTable["xsxRotation"], {Rotation = xsxLogo.Rotation - MinusAmount}):Play()
-        end
-    end)()
-
-    TweenService:Create(edge, TweenTable["introduction"], {BackgroundTransparency = 0}):Play()
-    TweenService:Create(background, TweenTable["introduction"], {BackgroundTransparency = 0}):Play()
-    wait(.2)
-    TweenService:Create(bar, TweenTable["introduction"], {Size = UDim2.new(0, 298, 0, 1)}):Play()
-    wait(.2)
-    TweenService:Create(xsx, TweenTable["introduction"], {TextTransparency = 0}):Play()
-    TweenService:Create(text, TweenTable["introduction"], {TextTransparency = 0}):Play()
-    wait(.3)
-    TweenService:Create(xsxLogo, TweenTable["introduction"], {ImageTransparency = 0}):Play()
-    wait(2)
-    TweenService:Create(xsxLogo, TweenTable["introduction"], {ImageTransparency = 1}):Play()
-    wait(.2)
-    TweenService:Create(hashLogo, TweenTable["introduction"], {ImageTransparency = 0}):Play()
-    wait(2)
-    TweenService:Create(hashLogo, TweenTable["introduction"], {ImageTransparency = 1}):Play()
-    wait(.1)
-    TweenService:Create(text, TweenTable["introduction"], {TextTransparency = 1}):Play()
-    wait(.1)
-    TweenService:Create(xsx, TweenTable["introduction"], {TextTransparency = 1}):Play()
-    wait(.1)
-    TweenService:Create(bar, TweenTable["introduction"], {Size = UDim2.new(0, 0, 0, 1)}):Play()
-    wait(.1)
-    TweenService:Create(background, TweenTable["introduction"], {BackgroundTransparency = 1}):Play()
-    TweenService:Create(edge, TweenTable["introduction"], {BackgroundTransparency = 1}):Play()
-    wait(.2)
-    introduction:Destroy()
 end
 
 function library:Init(key)
