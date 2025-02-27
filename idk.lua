@@ -932,7 +932,7 @@ function library:Init(key)
     headerLabel.Text = title
     headerLabel.TextColor3 = Color3.fromRGB(198, 198, 198)
     headerLabel.TextSize = 16.000
-    headerLabel.TextXAlignment = Enum.TextXAlignment.Left
+    headerLabel.TextXAlignment = Enum.TextXAlignment.Center
     headerLabel.RichText = true
 
     headerPadding.Name = "headerPadding"
